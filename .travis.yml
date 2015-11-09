@@ -15,7 +15,7 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - docker build -t dockstore-tool-linux-sort .
+  - docker build -t quay.io/collaboratory/dockstore-tool-linux-sort .
 
 install: 
   - pip2.7 install --user cwl-runner
