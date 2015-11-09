@@ -7,6 +7,11 @@ description: |
     or:  sort [OPTION]... --files0-from=F
   Write sorted concatenation of all FILE(s) to standard output.
 
+dct:creator:
+  "@id": "http://orcid.org/0000-0002-7681-6415"
+  foaf:name: Brian O'Connor
+  foaf:mbox: "mailto:briandoconnor@gmail.com"
+
 requirements:
   - class: ExpressionEngineRequirement
     id: "#node-engine"
