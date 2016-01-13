@@ -21,4 +21,4 @@ install:
   - pip2.7 install --user cwl-runner
 
 script: 
-  - cwltool Dockstore.cwl test.json 
+  - cwltool --non-strict Dockstore.cwl test.json 
