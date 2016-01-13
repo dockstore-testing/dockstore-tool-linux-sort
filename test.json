@@ -1,8 +1,8 @@
 {
-    "input": {
-        "class": "File",
-        "path": "example.bedGraph"
-    },
+    "input": [{
+        "path" : "example.bedGraph",
+        "class": "File"
+    }],
     "allocatedResources": {
         "cpu": 1,
         "mem": 1000
@@ -10,6 +10,7 @@
     "key": [
         "1,1",
         "2,2n"
-    ]
+    ],
+    "output" : "example.bedGraph.sorted"
 }
 

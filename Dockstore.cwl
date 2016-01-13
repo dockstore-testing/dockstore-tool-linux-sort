@@ -20,49 +20,40 @@ dct:creator:
 dct:description: "Developed at Cincinnati Children’s Hospital Medical Center for the CWL consortium http://commonwl.org/ Original URL: https://github.com/common-workflow-language/workflows"
 
 requirements:
-  - class: ExpressionEngineRequirement
-    id: "#node-engine"
-    requirements:
-    - class: DockerRequirement
-      dockerPull: commonworkflowlanguage/nodejs-engine
-    engineCommand: cwlNodeEngine.js
-  - class: EnvVarRequirement
-    envDef:
-    - envName: "PATH"
-      envValue: "/usr/local/bin/:/usr/bin:/bin"
   - class: DockerRequirement
     dockerPull: quay.io/collaboratory/dockstore-tool-linux-sort
 
 inputs:
   - id: "#input"
-    type: File
+    type:
+      type: array
+      items: File
     inputBinding:
       position: 4
+  
+  - id: "#output"
+    type: string
 
   - id: "#key"
     type: 
       type: array
       items: string 
+      inputBinding:
+        prefix: "-k"
+    inputBinding:
+      position: 1
     description: |
       -k, --key=POS1[,POS2]
       start a key at POS1, end it at POS2 (origin 1)
+
+stdout: $(inputs.output)
 
 outputs:
   - id: "#sorted"
     type: File
     description: "The sorted file"
-    outputBinding:
-      glob:
-        engine: "#node-engine" 
-        script: $job['input'].path.split('/').slice(-1)[0] + '.sorted'
-
-stdout: 
-  engine: "#node-engine" 
-  script: $job['input'].path.split('/').slice(-1)[0] + '.sorted'
+    outputBinding: 
+      glob: $(inputs.output)
 
 baseCommand: ["sort"]
 
-arguments:
-  - valueFrom:
-      engine: "#node-engine"
-      script: $job['key'].map(function(i) {return "-k"+i;})
