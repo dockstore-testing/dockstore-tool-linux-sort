@@ -16,6 +16,7 @@ jdk:
 
 before_install:
   - docker build -t quay.io/collaboratory/dockstore-tool-linux-sort .
+  - docker pull commonworkflowlanguage/nodejs-engine
 
 install: 
   - pip2.7 install --user cwl-runner
