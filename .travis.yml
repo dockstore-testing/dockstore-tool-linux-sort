@@ -16,6 +16,7 @@ jdk:
 
 before_install:
   - docker build -t quay.io/collaboratory/dockstore-tool-linux-sort .
+  - pip2.7 install --user setuptools==24.0.3
 
 install: 
   - pip2.7 install --user cwl-runner
