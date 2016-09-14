@@ -7,6 +7,8 @@ description: |
     or:  sort [OPTION]... --files0-from=F
   Write sorted concatenation of all FILE(s) to standard output.
 
+cwlVersion: draft-3 
+
 dct:contributor:
   "@id": "http://orcid.org/orcid.org/0000-0002-6130-1021"
   foaf:name: Denis Yuen
@@ -21,7 +23,7 @@ dct:description: "Developed at Cincinnati Children’s Hospital Medical Center f
 
 requirements:
   - class: DockerRequirement
-    dockerPull: quay.io/collaboratory/dockstore-tool-linux-sort
+    dockerPull: quay.io/collaboratory/dockstore-tool-linux-sort:0.3
 
 inputs:
   - id: "#input"
