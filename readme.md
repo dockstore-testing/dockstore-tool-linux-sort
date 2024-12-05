@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/CancerCollaboratory/dockstore-tool-linux-sort.svg)](https://travis-ci.org/CancerCollaboratory/dockstore-tool-linux-sort)
+[![Build Status](https://travis-ci.org/dockstore-testing/dockstore-tool-linux-sort.svg)](https://travis-ci.org/CancerCollaboratory/dockstore-tool-linux-sort)
 [![Docker Repository on Quay](https://quay.io/repository/collaboratory/dockstore-tool-linux-sort/status "Docker Repository on Quay")](https://quay.io/repository/collaboratory/dockstore-tool-linux-sort)
 
 This tool has been validated as a CWL draft-3 and v1.0 CommandLineTool. 
